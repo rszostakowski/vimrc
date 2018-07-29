@@ -1,0 +1,159 @@
+
+://github.com/JetBrains/ideavim/blob/master/doc/set-commands.md 
+set incsearch into your ~/.ideavimrc 
+set hlsearch 
+set number 
+set list 
+runtime macros/matchit.vim 
+set showcmd 
+set showmode 
+set wildmenu 
+set wildmode=list:longest 
+set ruler 
+ 
+:syntax enable 
+:set syntax=apache 
+ 
+ 
+************************************ 
+H - go to top (high) 
+M - go to medium (medium) 
+L - move to bottom (low) 
+ 
+6l - forward 6 letters 
+2j - down 2 lines 
+12G - go to 12 line 
+ 
+gg - top of the file 
+G - end of the file 
+w - next word 
+3w - forward 3 words 
+b - prew word 
+ 
+fN - go to next occurence of 'N' 
+3fN - go to third 'N' 
+Fy - idz do poprzedniej litery 'y' 
+0 - przenosi do poczatku linii 
+$ - przenosi na koniec linii 
+e - przenosi do konca slowa 
+gw - przenosi do poprzendiego konca slowa 
+gm - przenosi do srodka linii 
+ctrl u - polowa screenu w gore 
+ctrl d - polowa screenu w dol 
+ 
+ma - zaznacza punkt 
+'a - jump to marked line 
+`a - skacze dokladnie do tego punktu 
+mA - zaznacza punkt w innym pliku 
+'' - przeskakuje do poprzedniego markera 
+'. - go to last change 
+shift A - do konca lini 
+ct, - change till , 
+cM, - change with , 
+ci{ - change in brackets 
+ 
+****************Find and Replace******************** 
+/someWord - find a word and go to it 
+:/someWord - find a line with that aword 
+n - next occurrence 
+N - prev occurrence 
+:hls - set hlsearch - mark matches 
+:%/search/replace/gc -> search and replace -> g all occerences c ask confirmation 
+* - bedac na slowie szuka nastepnego wystapienia 
+# - bedac na slowie szuka poprzedniego wystapienia 
+g* - szuka czesci slowa w innych 
+ 
+***************Copy and Paste********************* 
+V -> uruchamia zaznaczanie wszystkich linii 
+v -> zaznacza od tego kursora 
+yy - copy a line 
+p - paste text below cursor 
+P - wkleja przed 
+0p - zawsze dziala 
+:registers - pokazuje schowek 
+ 
+************************************ 
+i - insert text before cursor 
+I - move to first non blank character of line 
+^ - -||- 
+a - append text after cursor 
+A - move to the end of line 
+o - insert blank line and INSERT mode 
+O - insert line above 
+cw - change one word starting from the point 
+3cw - change 3 words 
+rM - change letter to M 
+ 
+J - laczy linie ze sobą 
+x - usuwa dany letter 
+X - deletes back 
+cc - changing line 
+gJ - laczy linie pod spodem z obecna 
+<< taby w NORMAL mode 
+>> 
+ 
+ctrl d  - taby w Insert mode 
+ctrl t  - taby w Insert mode 
+{} - move to paragraph 
+() - move to sentence 
+% - move between matching brackets 
+CTRL [ - alternatywa dla ESC 
+ 
+r - zmienia tylko raz 
+R - wchodzi w tryb edycji 
+ 
+vit - zaznaczasz wszystko (i) w tagu (htmlowym) 
+vat - zaznaczasz wszystko (i) w tagu wraz z tagami (htmlowym) 
+ci} - change In Brackets 
+ 
+ 
+************************************ 
+d - usun zaznaczony tekst 
+d2w - usuwa dwa slowa 
+c - usuwa zaznaczony tekst i INSERT mode 
+ 
+************************************ 
+:w 
+:w! overwrite without confirmation 
+:e nazwapliku- otwiera nowy plik 
+:iab ff Firefox - dodaje skrot na slow 
+ 
+ 
+************************************ 
+zo - z open - otwiera zawijany tekst 
+zc - z close - zamyka sekcje (Zawija) 
+zM - zamyka wszystko 
+zR - otwiera wszystko 
+************************************ 
+u - undo 
+Ctrl-R - Redo 
+== formatuje linie 
+ 
+cd - -> idzie do przeszlej lokalizacji w shellu 
+ 
+. - powtarza ostatnia akcje 
+***Plugins 
+makegreen -d do opalania testów i pathogen 
+vim editor 
+https://github.com/fatih/vim-go 
+https://github.com/fatih/vim-go-tutorial#quick-setup 
+dst - delete sourranding tag 
+yss - sourand line with our custom tag 
+ 
+snippetsEmu 
+tcomment gc8j - toggle comment for next 8 line 
+ 
+seil na macu zmiana CAPS na ESC 
+karabiner - zmienić Delay until repeat 400 i na key Repeat na 25 
+vim cheat sheet -sciagnac 
+ 
+vimcasts.org - by zobaczyc jak inni uzywaja vima 
+upcase.com/vim 
+ 
+ctrlp.vim 
+nerdtree - mozna dodac skroty klawiszowe na rozne rzeczy 
+AG for vim - the best searching plugin 
+Deletes arrows even in insert mode
+
+****Przydatne komendy linux****
+setxkbmap -option caps:escape	=> zmienia CAPSLOCK na ESC

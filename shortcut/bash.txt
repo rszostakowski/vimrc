@@ -1,0 +1,13 @@
+cd - 			=> idzie do poprzedniej lokacji
+^ a 			=> idzie na poczatek linii
+^ e 			=> idzie na koniec linii
+^ k 			=> usuwa wszystko do końca linii 
+^ w 			=> usuwa ostatnie slowoo
+ESC-b 			=> do tylu jedno slow
+ESC-f			=> do przodu jedno slowo
+!! 			=> powtarza ostatnia komende
+!$     			=> bierze ostatni argument z poprzedniej komendy
+echo !:0 		=> bierze pierwszy argument z poprzedniej komendy
+!echo 			=> wyszuka ostatnio użyta komende echo
+
+
