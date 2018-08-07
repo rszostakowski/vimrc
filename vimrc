@@ -4,6 +4,12 @@
 
 "Show in which mode we are
 set showmode
+"Show numbers on each line
+:set number
+"Highlight the word which we are searching
+:set hlsearch
+"Highlight the words while typing
+:set incsearch
 
 "To use this config in ideavim please add a line below to the ~/.ideavimrc source ~/.vim/vimrc
 set background=dark
