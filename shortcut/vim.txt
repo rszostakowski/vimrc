@@ -1,3 +1,23 @@
+*****************************************************************
+J       -> joins the line below into current one
+
+
+
+
+
+
+
+
+
+*******************************************************************
+
+
+
+
+
+
+
+
 
 ://github.com/JetBrains/ideavim/blob/master/doc/set-commands.md 
 set incsearch into your ~/.ideavimrc 

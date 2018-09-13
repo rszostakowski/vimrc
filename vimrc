@@ -11,6 +11,9 @@ set showmode
 "Highlight the words while typing
 :set incsearch
 
+set list
+set listchars=tab:>-
+
 "To use this config in ideavim please add a line below to the ~/.ideavimrc source ~/.vim/vimrc
 set background=dark
 filetype on
