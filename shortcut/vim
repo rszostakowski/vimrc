@@ -40,7 +40,21 @@ P               -> wkleja przed
 :registers      -> pokazuje schowek 
 
 # OPENING-CLOSING FILES
-:e nazwapliku   ->  otwiera nowy plik np ':e ../innyplik'
+:e nazwapliku   -> otwiera nowy plik np ':e ../innyplik'
+:split filename -> split window and load another file
+:vsplit file    -> vertical split
+:sview file     -> same as split, but readonly
+
+ctrl-w up arrow -> move cursor up a window
+ctrl-w ctrl-w   -> move cursor to another window (cycle)
+ctrl-w_         -> maximize current window
+ctrl-w=         -> make all equal size
+
+:hide           -> close current windo
+:only           -> keep only this window open
+:ls             -> show current buffers
+
+
 
 #FINDING
 Fy              -> idz do poprzedniej litery 'y' 
@@ -78,6 +92,7 @@ zR               -> otwiera wszystko
 gcc or g>c       -> comments the current line
 gc4 UP or DOWN   -> comments 4 lines u gory lub na dokladnie
 gc UP or DOWN    -> comments the current and one above or below
+gc8j             -> toggle comment for next 8 line 
 
 g<c              -> Uncomment the current line
 g<b              -> Uncomment the current region as block
@@ -95,15 +110,21 @@ cs]              -> { [ Hello] world! -> { Hello } world!
 yssb or yss      -> Now wrap the entire line in parentheses ({ Hello } world!) 
 ysiw<em>         -> makes <em>Hello</em> world!
 
+#ctrlp.vim
+pozwala na wyszukiwanie plików za pomoca ctrl + p -> wiecej na https://www.youtube.com/watch?v=8XGueeQJsrA
+
+
+#vim-airline  
+dodaj ten pasek informacyjny na dole 
+
 #gruvbox
+https://github.com/morhetz/gruvbox/wiki/Configuration - do zmiany konfiguracji
 https://github.com/morhetz/gruvbox/issues/85
 
 snippetsEmu 
-tcomment gc8j               -> toggle comment for next 8 line 
+makegreen -d do opalania testów (chyba w ruby) i pathogen 
 
-makegreen -d do opalania testów i pathogen 
-
-ctrlp.vim 
+ 
 nerdtree               -> mozna dodac skroty klawiszowe na rozne rzeczy 
 AG for vim               -> the best searching plugin 
 Deletes arrows even in insert mode

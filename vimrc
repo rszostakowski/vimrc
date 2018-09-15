@@ -1,6 +1,6 @@
 "Remember to rename vimrc directory to .vim
 
-"Show in which mode we are
+"Show in which mode we are 
 set showmode
 "Show numbers on each line
 :set number
@@ -41,3 +41,4 @@ let g:gruvbox_contrast_dark='hard'
 filetype on
 "Syntax on must be the last one 
 syntax on 
+
