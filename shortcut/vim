@@ -128,6 +128,25 @@ it makes a tree of files for us to see
 https://www.youtube.com/watch?v=CPu9mDpSYj0
 https://medium.com/usevim/nerd-tree-guide-bb22c803dcd2
 
+#ack.vim
+?    a quick summary of these keys, repeat to close
+o    to open (same as Enter)
+O    to open and close the quickfix window
+go   to preview file, open but maintain focus on ack.vim results
+t    to open in new tab
+T    to open in new tab without moving to it
+h    to open in horizontal split
+H    to open in horizontal split, keeping focus on the results
+v    to open in vertical split
+gv   to open in vertical split, keeping focus on the results
+q    to close the quickfix window
+
+
+it makes search for code use in the codebase
+https://beyondgrep.com/documentation/
+you have to do apt-get install ack-grep
+
+
 #ctrlp.vim
 pozwala na wyszukiwanie plików za pomoca ctrl + p -> wiecej na https://www.youtube.com/watch?v=8XGueeQJsrA
 https://github.com/kien/ctrlp.vim -> skroty
@@ -141,7 +160,6 @@ https://github.com/morhetz/gruvbox/issues/85
 
  
 makegreen -d do opalania testów (chyba w ruby) i pathogen 
-commandT
 LustyExplorer
 AG for vim               -> the best searching plugin 
 https://www.youtube.com/watch?v=knSFZCKMy20
