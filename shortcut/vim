@@ -68,14 +68,33 @@ ctrl d          -> taby w Insert mode
 ctrl t          -> taby w Insert mode 
 
 #CLOSING AND OPENING METHODS
-zo               -> z open               -> otwiera zawijany tekst 
-zc               -> z close               -> zamyka sekcje (Zawija) 
+zo               -> z open  -> otwiera zawijany tekst 
+zc               -> z close -> zamyka sekcje (Zawija) 
 zM               -> zamyka wszystko 
 zR               -> otwiera wszystko 
 
 *********************************************Plugins****************************************************************
-dst               -> delete sourranding tag 
-yss"              -> sourand line with our custom tag 
+#tcomment_vim  
+gcc or g>c       -> comments the current line
+gc4 UP or DOWN   -> comments 4 lines u gory lub na dokladnie
+gc UP or DOWN    -> comments the current and one above or below
+
+g<c              -> Uncomment the current line
+g<b              -> Uncomment the current region as block
+
+g>c              -> Comment the current line
+g>b              -> Comment the current region as block
+
+#vim-surround
+cs"'             -> "Hello world!" to  'Hello world!'
+cs'              -> <q> to <q>Hello world!</q>
+cst"             -> <q>Hello world!</q> to get  "Hello world!"
+ds"              -> To remove the delimiters entirely, press Hello world!
+ysiw]            -> (iw is a text object) -> [Hello] world!
+cs]              -> { [ Hello] world! -> { Hello } world!
+yssb or yss      -> Now wrap the entire line in parentheses ({ Hello } world!) 
+ysiw<em>         -> makes <em>Hello</em> world!
+
 
 snippetsEmu 
 tcomment gc8j               -> toggle comment for next 8 line 
