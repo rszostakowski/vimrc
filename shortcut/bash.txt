@@ -10,4 +10,7 @@ ESC-f			=> do przodu jedno slowo
 echo !:0 		=> bierze pierwszy argument z poprzedniej komendy
 !echo 			=> wyszuka ostatnio użyta komende echo
 
-
+!?cat           => wraca do ostatniego uzytego polecenia co ma cat np cat /etc/shells
+tac             => odwrotnosc cat - wyswietla linie od tylu
+cut -d          => wyswietla odpowiednie kolumny, gdzie d to delimeter
+cut -f2,4 -d"," etc/passwds => wyswietla 2 i 3 kolumne gdzie odstepem jest ","

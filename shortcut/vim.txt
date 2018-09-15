@@ -1,5 +1,7 @@
 *****************************************************************
 J       -> joins the line below into current one
+0	-> goes to the start of the line, stays in COMMAND mode
+$	-> goes to the end of the line, stays in COMMAND mode
 
 
 

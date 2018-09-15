@@ -1,0 +1,16 @@
+# zmiana w global shorcuts -> kwin
+ctrl + l 	=> pokazuje obecny adres gdzie jestem w file systemie
+ctrl + h    => pokazuje ukryte pliki w oknie przeglądania plików
+meta(windows) + <-      => przesuwa okno do lewej
+meta(windows) + <-      => przesuwa okno do prawej
+meta(windows) + UP      => przesuwa okno do gory
+meta(windows) + DOWN    => przesuwa okno do dolu
+meta(windows) + d       => pokazuje desktop
+
+ctrl + f10              => pokazuje wszystkie aplikacje
+meta + shift + UP       => maksymalizuje okno
+meta + shift + DOWN     => minimalizuje okno
+ALT + F4                => zamyka okno
+
+ctrl + shift + +        => zwiekszenie czcionki
+ctrl + shift + -        => zmniejszenie czcionki

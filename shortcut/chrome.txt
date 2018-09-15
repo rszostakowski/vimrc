@@ -1,0 +1,1 @@
+ALT + L				=> przechodzi do paska adresu
