@@ -28,6 +28,13 @@ noremap <Right> <NOP>
 nnoremap j gj
 nnoremap k gk
 
+"Nerdtree config
+autocmd vimenter * NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+"Add a mapping to open the tree
+map <C-n> :NERDTreeToggle<CR>
 "THEME AND COLOR
 "two lines below must be placed because Terminator program do not display the gruvbox theme https://stackoverflow.com/questions/38311626/vim-color-scheme-with-terminator#
 set background=dark

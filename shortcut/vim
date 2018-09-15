@@ -53,7 +53,7 @@ ctrl-w=         -> make all equal size
 :hide           -> close current windo
 :only           -> keep only this window open
 :ls             -> show current buffers
-
+buffer          -> it can be :b 4 -> it open buffers number 4
 
 
 #FINDING
@@ -110,9 +110,27 @@ cs]              -> { [ Hello] world! -> { Hello } world!
 yssb or yss      -> Now wrap the entire line in parentheses ({ Hello } world!) 
 ysiw<em>         -> makes <em>Hello</em> world!
 
+#nerdtree
+Type :help NERDTreeMappings to read through all of the default keyboard shortcuts. These are the ones I use the most frequently:
+
+t               -> Open the selected file in a new tab
+i               -> Open the selected file in a horizontal split window
+s               -> Open the selected file in a vertical split window
+I               -> Toggle hidden files when beeing in the TREE
+m               -> Show the NERD Tree menu - you can add a file for example
+R               -> Refresh the tree, useful if files change outside of Vim
+?               -> Toggle NERD Tree's quick help
+ctrl + n        -> otwiera tree
+:qa             ->zamyka wszystkie okna i wychodzi
+:wqa            ->zamyka i zapisuje wszystkie okna 
+
+it makes a tree of files for us to see
+https://www.youtube.com/watch?v=CPu9mDpSYj0
+https://medium.com/usevim/nerd-tree-guide-bb22c803dcd2
+
 #ctrlp.vim
 pozwala na wyszukiwanie plików za pomoca ctrl + p -> wiecej na https://www.youtube.com/watch?v=8XGueeQJsrA
-
+https://github.com/kien/ctrlp.vim -> skroty
 
 #vim-airline  
 dodaj ten pasek informacyjny na dole 
@@ -121,13 +139,12 @@ dodaj ten pasek informacyjny na dole
 https://github.com/morhetz/gruvbox/wiki/Configuration - do zmiany konfiguracji
 https://github.com/morhetz/gruvbox/issues/85
 
-snippetsEmu 
-makegreen -d do opalania testów (chyba w ruby) i pathogen 
-
  
-nerdtree               -> mozna dodac skroty klawiszowe na rozne rzeczy 
+makegreen -d do opalania testów (chyba w ruby) i pathogen 
+commandT
+LustyExplorer
 AG for vim               -> the best searching plugin 
-Deletes arrows even in insert mode
+https://www.youtube.com/watch?v=knSFZCKMy20
 
 
 *********************************************Memorized****************************************************************
@@ -196,5 +213,5 @@ vim cheat sheet -sciagnac
 # VIM LEARNING MATERIALS
 vimcasts.org               -> by zobaczyc jak inni uzywaja vima 
 upcase.com/vim 
-
+https://www.youtube.com/user/nettutsplus/search?query=vim
 
