@@ -14,3 +14,6 @@ ALT + F4                => zamyka okno
 
 ctrl + shift + +        => zwiekszenie czcionki
 ctrl + shift + -        => zmniejszenie czcionki
+
+****Usefull commands****
+setxkbmap -option caps:escape	=> zmienia CAPSLOCK na ESC

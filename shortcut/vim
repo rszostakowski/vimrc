@@ -1,181 +1,158 @@
-*****************************************************************
-J       -> joins the line below into current one
-0	    -> goes to the start of the line, stays in COMMAND mode
-$	    -> goes to the end of the line, stays in COMMAND mode
+*********************************************Unmemorized****************************************************************
+J               -> joins the line below into current one
+0               -> goes to the start of the line, COMMAND 
+^               -> goes to the start of the line, COMMAND 
+$               -> goes to the end of the line, COMMAND 
+0               -> goes to the start of the line, INSERT 
+shift I         -> goes to the start of the line, INSERT 
+shift A         -> goes to the end of the line, INSERT 
+()              -> move to sentence 
 
+#LAST CHANGES
+'.              -> go to last change 
+Ctrl-R          ->  Redo (reverts UNDO)
 
+#DELETING 
+D  or (d$)      -> delete from the cursor to the end of the line
+X               -> deletes the previous character (in a direction of the start of the line)
 
+#CHANGE AND REPLACE
+cc              -> changing the whole line, INSERT 
+dd              -> deleting the whole line, COMMAND
 
+#SCROLLING
+H               -> go to top (high) 
+M               -> go to medium (medium) 
+L               -> move to bottom (low) 
+ctrl u          -> polowa screenu w gore 
+ctrl d          -> polowa screenu w dol
 
+#WORD TRAVERSING
+w               -> next word (first letter of the word)
+b               -> prew word (first letter of the word)
+e               -> next end of the word 
+gm              -> go to the medium of the line 
 
+#COPY AND PASTE
+P               -> wkleja przed 
+4p              -> paste sth 4 times
+"0p             -> copy the thing which is under "0 in register
+:registers      -> pokazuje schowek 
 
+# OPENING-CLOSING FILES
+:e nazwapliku   ->  otwiera nowy plik np ':e ../innyplik'
 
+#FINDING
+Fy              -> idz do poprzedniej litery 'y' 
+dty             -> delete till 'y', COMMAND
+*               -> bedac na slowie szuka nastepnego wystapienia 
+#               -> bedac na slowie szuka poprzedniego wystapienia 
+:/someWord      -> find a line with that aword, cursor at the start
 
-*******************************************************************
+#REPLACING
+:%/search/replace/gc        -> search and replace -> g all occerences c ask confirmation
+R               -> wchodzi w tryb edycji 
+c               -> usuwa zaznaczony tekst, INSERT
 
+#MARKERS
+ma              -> zaznacza punkt 
+'a              -> jump to marked line 
+`a              -> skacze dokladnie do tego punktu 
+mA              -> zaznacza punkt w innym pliku (umozliwia przechodzenie miedzy plikami)
+''              -> przeskakuje do poprzedniego markera
+ 
+#TABS
+<<              -> insert tabs in normal mode, COMMAND
+>>              -> insert tabs in normal mode, COMMAND
+ctrl d          -> taby w Insert mode 
+ctrl t          -> taby w Insert mode 
 
+#CLOSING AND OPENING METHODS
+zo               -> z open               -> otwiera zawijany tekst 
+zc               -> z close               -> zamyka sekcje (Zawija) 
+zM               -> zamyka wszystko 
+zR               -> otwiera wszystko 
 
+*********************************************Plugins****************************************************************
+dst               -> delete sourranding tag 
+yss"              -> sourand line with our custom tag 
 
+snippetsEmu 
+tcomment gc8j               -> toggle comment for next 8 line 
 
-
-
-
-
-://github.com/JetBrains/ideavim/blob/master/doc/set-commands.md 
-set incsearch into your ~/.ideavimrc 
-set hlsearch 
-set number 
-set list 
-runtime macros/matchit.vim 
-set showcmd 
-set showmode 
-set wildmenu 
-set wildmode=list:longest 
-set ruler 
- 
-:syntax enable 
-:set syntax=apache 
- 
- 
-************************************ 
-H - go to top (high) 
-M - go to medium (medium) 
-L - move to bottom (low) 
- 
-6l - forward 6 letters 
-2j - down 2 lines 
-12G - go to 12 line 
- 
-gg - top of the file 
-G - end of the file 
-w - next word 
-3w - forward 3 words 
-b - prew word 
- 
-fN - go to next occurence of 'N' 
-3fN - go to third 'N' 
-Fy - idz do poprzedniej litery 'y' 
-0 - przenosi do poczatku linii 
-$ - przenosi na koniec linii 
-e - przenosi do konca slowa 
-gw - przenosi do poprzendiego konca slowa 
-gm - przenosi do srodka linii 
-ctrl u - polowa screenu w gore 
-ctrl d - polowa screenu w dol 
- 
-ma - zaznacza punkt 
-'a - jump to marked line 
-`a - skacze dokladnie do tego punktu 
-mA - zaznacza punkt w innym pliku 
-'' - przeskakuje do poprzedniego markera 
-'. - go to last change 
-shift A - do konca lini 
-ct, - change till , 
-cM, - change with , 
-ci{ - change in brackets 
- 
-****************Find and Replace******************** 
-/someWord - find a word and go to it 
-:/someWord - find a line with that aword 
-n - next occurrence 
-N - prev occurrence 
-:hls - set hlsearch - mark matches 
-:%/search/replace/gc -> search and replace -> g all occerences c ask confirmation 
-* - bedac na slowie szuka nastepnego wystapienia 
-# - bedac na slowie szuka poprzedniego wystapienia 
-g* - szuka czesci slowa w innych 
- 
-***************Copy and Paste********************* 
-V -> uruchamia zaznaczanie wszystkich linii 
-v -> zaznacza od tego kursora 
-yy - copy a line 
-p - paste text below cursor 
-P - wkleja przed 
-0p - zawsze dziala 
-:registers - pokazuje schowek 
- 
-************************************ 
-i - insert text before cursor 
-I - move to first non blank character of line 
-^ - -||- 
-a - append text after cursor 
-A - move to the end of line 
-o - insert blank line and INSERT mode 
-O - insert line above 
-cw - change one word starting from the point 
-3cw - change 3 words 
-rM - change letter to M 
- 
-J - laczy linie ze sobą 
-x - usuwa dany letter 
-X - deletes back 
-cc - changing line 
-gJ - laczy linie pod spodem z obecna 
-<< taby w NORMAL mode 
->> 
- 
-ctrl d  - taby w Insert mode 
-ctrl t  - taby w Insert mode 
-{} - move to paragraph 
-() - move to sentence 
-% - move between matching brackets 
-CTRL [ - alternatywa dla ESC 
- 
-r - zmienia tylko raz 
-R - wchodzi w tryb edycji 
- 
-vit - zaznaczasz wszystko (i) w tagu (htmlowym) 
-vat - zaznaczasz wszystko (i) w tagu wraz z tagami (htmlowym) 
-ci} - change In Brackets 
- 
- 
-************************************ 
-d - usun zaznaczony tekst 
-d2w - usuwa dwa slowa 
-c - usuwa zaznaczony tekst i INSERT mode 
- 
-************************************ 
-:w 
-:w! overwrite without confirmation 
-:e nazwapliku- otwiera nowy plik 
-:iab ff Firefox - dodaje skrot na slow 
- 
- 
-************************************ 
-zo - z open - otwiera zawijany tekst 
-zc - z close - zamyka sekcje (Zawija) 
-zM - zamyka wszystko 
-zR - otwiera wszystko 
-************************************ 
-u - undo 
-Ctrl-R - Redo 
-== formatuje linie 
- 
-cd - -> idzie do przeszlej lokalizacji w shellu 
- 
-. - powtarza ostatnia akcje 
-***Plugins 
 makegreen -d do opalania testów i pathogen 
+
+ctrlp.vim 
+nerdtree               -> mozna dodac skroty klawiszowe na rozne rzeczy 
+AG for vim               -> the best searching plugin 
+Deletes arrows even in insert mode
+
+
+*********************************************Memorized****************************************************************
+6l               -> forward 6 letters 
+2j               -> down 2 lines 
+12G              -> go to 12 line 
+gg               -> top of the file 
+G                -> end of the file 
+3w               -> forward 3 words 
+x                -> usuwa dany letter 
+fN               -> go to next occurence of 'N' 
+3fN              -> go to third 'N' 
+ci{              -> change in brackets 
+/someWord        -> find a word and go to it 
+cw               -> change one word starting from the cursur
+caw              -> change the whole word
+3cw              -> change 3 words 
+rM               -> change letter the current letter to letter M 
+gJ               -> laczy linie pod spodem z obecna 
+.                -> powtarza ostatnia akcje 
+r                -> zmienia tylko raz 
+CTRL [           -> alternatywa dla ESC
+d                -> usun zaznaczony tekst 
+d2w              -> usuwa dwa slowa 
+:w!              -> overwrite without confirmation 
+u                -> undo 
+
+i                -> insert text before cursor, INSERT 
+I                -> move to first non blank character of line, INSERT 
+a                -> append text after cursor, INSERT
+A                -> move to the end of line, INSERT
+o                -> insert blank line, INSERT mode 
+O                -> insert line above, INSERT mode 
+
+{}               -> move to paragraph 
+%                -> move between matching brackets 
+
+
+#Find and Replace 
+n               -> next occurrence 
+N               -> prev occurrence 
+V               -> uruchamia zaznaczanie wszystkich linii 
+v               -> zaznacza od tego kursora 
+
+#Copy and Paste
+yy              -> copy a line 
+p               -> paste text below cursor 
+
+# HTML
+vit             -> zaznaczasz wszystko (i) w tagu (htmlowym) 
+vat             -> zaznaczasz wszystko (i) w tagu wraz z tagami (htmlowym) 
+ci}             -> change In Brackets 
+
+
+*********************************************OTHERS****************************************************************
+#GOLANG
 vim editor 
 https://github.com/fatih/vim-go 
 https://github.com/fatih/vim-go-tutorial#quick-setup 
-dst - delete sourranding tag 
-yss - sourand line with our custom tag 
- 
-snippetsEmu 
-tcomment gc8j - toggle comment for next 8 line 
- 
+
+#MAC
 seil na macu zmiana CAPS na ESC 
-karabiner - zmienić Delay until repeat 400 i na key Repeat na 25 
+karabiner               -> zmienić Delay until repeat 400 i na key Repeat na 25 
 vim cheat sheet -sciagnac 
  
-vimcasts.org - by zobaczyc jak inni uzywaja vima 
+# VIM LEARNING MATERIALS
+vimcasts.org               -> by zobaczyc jak inni uzywaja vima 
 upcase.com/vim 
- 
-ctrlp.vim 
-nerdtree - mozna dodac skroty klawiszowe na rozne rzeczy 
-AG for vim - the best searching plugin 
-Deletes arrows even in insert mode
 
-****Przydatne komendy linux****
-setxkbmap -option caps:escape	=> zmienia CAPSLOCK na ESC
+
