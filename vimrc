@@ -8,7 +8,8 @@ set showmode
 :set hlsearch
 "Highlight the words while typing
 :set incsearch
-
+"Saves the go file automatically if you do :make
+set autowrite
 set list
 set listchars=tab:>-
 
@@ -34,7 +35,21 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "Add a mapping to open the tree
-map <C-n> :NERDTreeToggle<CR>
+map <C-t> :NERDTreeToggle<CR>
+
+"Vim-go mappings
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+" Shortcut to Close quickfix window with leader+c
+nnoremap <leader>a :cclose<CR>
+" maps GoBuild to \b
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+" maps GoRun to \r
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+" shows only the quickfix error list in vim-go
+let g:go_list_type = "quickfix"
+" timeout for tests run in vim-go
+let g:go_test_timeout = '10s'
 "THEME AND COLOR
 "two lines below must be placed because Terminator program do not display the gruvbox theme https://stackoverflow.com/questions/38311626/vim-color-scheme-with-terminator#
 set background=dark
@@ -46,6 +61,8 @@ let g:gruvbox_contrast_dark='hard'
 
 "To use this config in ideavim please add a line below to the ~/.ideavimrc source ~/.vim/vimrc
 filetype on
+" Enable filetype plugins - It is needed to run GoRun %
+filetype plugin on
 "Syntax on must be the last one 
 syntax on 
 

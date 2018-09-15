@@ -53,8 +53,9 @@ ctrl-w=         -> make all equal size
 :hide           -> close current windo
 :only           -> keep only this window open
 :ls             -> show current buffers
-buffer          -> it can be :b 4 -> it open buffers number 4
-
+:buffer          -> it can be :b 4 -> it open buffers number 4
+:bnext          -> goes to next buffer
+:bprev          -> goes to prev buffer (previously opened file)
 
 #FINDING
 Fy              -> idz do poprzedniej litery 'y' 
@@ -113,6 +114,7 @@ ysiw<em>         -> makes <em>Hello</em> world!
 #nerdtree
 Type :help NERDTreeMappings to read through all of the default keyboard shortcuts. These are the ones I use the most frequently:
 
+ctrl + t        -> open or close the nerd tree
 t               -> Open the selected file in a new tab
 i               -> Open the selected file in a horizontal split window
 s               -> Open the selected file in a vertical split window
@@ -120,7 +122,6 @@ I               -> Toggle hidden files when beeing in the TREE
 m               -> Show the NERD Tree menu - you can add a file for example
 R               -> Refresh the tree, useful if files change outside of Vim
 ?               -> Toggle NERD Tree's quick help
-ctrl + n        -> otwiera tree
 :qa             ->zamyka wszystkie okna i wychodzi
 :wqa            ->zamyka i zapisuje wszystkie okna 
 
@@ -146,6 +147,19 @@ it makes search for code use in the codebase
 https://beyondgrep.com/documentation/
 you have to do apt-get install ack-grep
 
+#VIM-go
+:GoRun % builds the file
+:GoRun builds the whole package
+:GoBuild builds the file, shows the errors
+:cnext, cprev goes to the error
+ctrl + n, ctrl + m  => mapped keys
+\a                  => closes the error window
+\r                  => odala GoRun
+\b                  => buduje projekt GoBuild
+:GoTestFunc         => testuje tylko funkcje pod kursorem
+:GoTest             => odpala wszystkie testy
+:GoTestCompile       => testy musza tez sie skompilowac poprawnie
+
 
 #ctrlp.vim
 pozwala na wyszukiwanie plików za pomoca ctrl + p -> wiecej na https://www.youtube.com/watch?v=8XGueeQJsrA
@@ -158,10 +172,19 @@ dodaj ten pasek informacyjny na dole
 https://github.com/morhetz/gruvbox/wiki/Configuration - do zmiany konfiguracji
 https://github.com/morhetz/gruvbox/issues/85
 
- 
+#Vim version problem with vim-go
+https://www.vim.org/git.php
+
+//TODO
+https://github.com/ap/vim-buftabline
+
+git plugin
+alias for hide 
+alias for only
+
+
 makegreen -d do opalania testów (chyba w ruby) i pathogen 
-LustyExplorer
-AG for vim               -> the best searching plugin 
+https://realpython.com/vim-and-python-a-match-made-in-heaven/
 https://www.youtube.com/watch?v=knSFZCKMy20
 
 
