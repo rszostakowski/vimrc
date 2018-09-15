@@ -87,7 +87,7 @@ g>b              -> Comment the current region as block
 
 #vim-surround
 cs"'             -> "Hello world!" to  'Hello world!'
-cs'              -> <q> to <q>Hello world!</q>
+cs'<q>           -> to <q>Hello world!</q>
 cst"             -> <q>Hello world!</q> to get  "Hello world!"
 ds"              -> To remove the delimiters entirely, press Hello world!
 ysiw]            -> (iw is a text object) -> [Hello] world!
@@ -95,6 +95,8 @@ cs]              -> { [ Hello] world! -> { Hello } world!
 yssb or yss      -> Now wrap the entire line in parentheses ({ Hello } world!) 
 ysiw<em>         -> makes <em>Hello</em> world!
 
+#gruvbox
+https://github.com/morhetz/gruvbox/issues/85
 
 snippetsEmu 
 tcomment gc8j               -> toggle comment for next 8 line 
