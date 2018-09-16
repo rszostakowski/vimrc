@@ -16,6 +16,10 @@ set listchars=tab:>-
 "Adding pathogen for libs management
 execute pathogen#infect()
 
+set hidden
+nnoremap <C-Right> :bnext<CR>
+nnoremap <C-Left> :bprev<CR>
+
 "Key mappings
 "ESC to jj
 :imap jj <Esc>
@@ -30,13 +34,12 @@ nnoremap j gj
 nnoremap k gk
 
 "Nerdtree config
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "Add a mapping to open the tree
 map <C-t> :NERDTreeToggle<CR>
-
 "Vim-go mappings
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
@@ -50,6 +53,9 @@ autocmd FileType go nmap <leader>r  <Plug>(go-run)
 let g:go_list_type = "quickfix"
 " timeout for tests run in vim-go
 let g:go_test_timeout = '10s'
+" go def vim-go problem when pressing ctrl t for NerdTree
+let g:go_def_mapping_enabled=0
+
 "THEME AND COLOR
 "two lines below must be placed because Terminator program do not display the gruvbox theme https://stackoverflow.com/questions/38311626/vim-color-scheme-with-terminator#
 set background=dark

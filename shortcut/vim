@@ -56,6 +56,7 @@ ctrl-w=         -> make all equal size
 :buffer          -> it can be :b 4 -> it open buffers number 4
 :bnext          -> goes to next buffer
 :bprev          -> goes to prev buffer (previously opened file)
+:sh             -> goes to shell, exit goes back to VIM
 
 #FINDING
 Fy              -> idz do poprzedniej litery 'y' 
@@ -63,6 +64,7 @@ dty             -> delete till 'y', COMMAND
 *               -> bedac na slowie szuka nastepnego wystapienia 
 #               -> bedac na slowie szuka poprzedniego wystapienia 
 :/someWord      -> find a line with that aword, cursor at the start
+?pattern        -> Search backward for pattern
 
 #REPLACING
 :%/search/replace/gc        -> search and replace -> g all occerences c ask confirmation
@@ -165,6 +167,12 @@ ctrl + n, ctrl + m  => mapped keys
 pozwala na wyszukiwanie plików za pomoca ctrl + p -> wiecej na https://www.youtube.com/watch?v=8XGueeQJsrA
 https://github.com/kien/ctrlp.vim -> skroty
 
+
+#vim-buftabline
+displays vim buffers as tabs
+ctrl + RIGHT        => goes to next tab
+ctrl + LEFT         => goes to prev tab
+
 #vim-airline  
 dodaj ten pasek informacyjny na dole 
 
@@ -176,12 +184,12 @@ https://github.com/morhetz/gruvbox/issues/85
 https://www.vim.org/git.php
 
 //TODO
-https://github.com/ap/vim-buftabline
-
 git plugin
 alias for hide 
 alias for only
-
+go to previous change 
+intelli sense
+wylaczyc opoznienie klawiszy - linux
 
 makegreen -d do opalania testów (chyba w ruby) i pathogen 
 https://realpython.com/vim-and-python-a-match-made-in-heaven/
