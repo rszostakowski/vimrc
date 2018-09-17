@@ -1,11 +1,20 @@
 cd - 			=> idzie do poprzedniej lokacji
-^ a 			=> idzie na poczatek linii
-^ e 			=> idzie na koniec linii
-^ k 			=> usuwa wszystko do końca linii 
-^ w 			=> usuwa ostatnie slowoo
+CTRL-a 			=> idzie na poczatek linii
+CTRL-e 			=> idzie na koniec linii
+CTRL-k 			=> usuwa wszystko do końca linii 
+CTRL-w 			=> usuwa ostatnie slowoo
+CTRL-L          =>	Clears the screen
+CTRL-D          =>	Exits the current shell
+CTRL-H          =>	Works the same as backspace
+CTRL-U          =>	Deletes from beginning of line to cursor position
+
+cat > file	Any subsequent lines typed will go into the file, until CTRL-D is typed.
+cat >> file	Any subsequent lines are appended to the file, until CTRL-D is typed.
+
+
 ESC-b 			=> do tylu jedno slow
 ESC-f			=> do przodu jedno slowo
-!! 			=> powtarza ostatnia komende
+!! 			    => powtarza ostatnia komende
 !$     			=> bierze ostatni argument z poprzedniej komendy
 echo !:0 		=> bierze pierwszy argument z poprzedniej komendy
 !echo 			=> wyszuka ostatnio użyta komende echo
@@ -14,3 +23,29 @@ echo !:0 		=> bierze pierwszy argument z poprzedniej komendy
 tac             => odwrotnosc cat - wyswietla linie od tylu
 cut -d          => wyswietla odpowiednie kolumny, gdzie d to delimeter
 cut -f2,4 -d"," etc/passwds => wyswietla 2 i 3 kolumne gdzie odstepem jest ","
+zcat, zless, zdiff, and zgrep  => working with compressed files
+
+popd??
+pushd??
+
+*********************** To REMEMBER ***************************
+sed                                  => Stream EDitor
+sed s/pattern/replace_string/g file1 > file2
+sed 1,2s/is/are/g testfile           => zamienia is na are w 1,2 liniach
+sed s/is/are/g testfile              => zamienia is na are globally
+
+
+awk '{ print $0 }' /etc/passwd	     => Print entire file
+awk -F: '{ print $1 }' /etc/passwd	 => Print first field (column) of every line, separated by a space
+
+sort -k 3 <filename>	             => Sort the lines by the 3rd field on each line instead of the beginning
+
+grep -v [pattern] <filename>	     => Print all lines that do not match the pattern
+grep -C 3 [pattern] <filename>	     => Print context of lines (specified number of lines above and below the pattern) for matching the pattern. Here, the number of lines is specified as 3.
+
+paste                                => can be used to combine fields (such as name or phone number) from different files
+split                                => is used to break up (or split) a file into equal-sized segments. For seeing LARGE files
+split american-english dictionary    => powstanie wiele plikow dictionary* (np dictionaryaa, disctionaryab)
+cat > test1
+teraz mozna pisac 
+CTRL + D escepe from wrting to the file test1

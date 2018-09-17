@@ -1,4 +1,5 @@
 *********************************************Unmemorized****************************************************************
+delay 180 repetition 35/s
 J               -> joins the line below into current one
 0               -> goes to the start of the line, COMMAND 
 ^               -> goes to the start of the line, COMMAND 
@@ -52,8 +53,9 @@ ctrl-w=         -> make all equal size
 
 :hide           -> close current windo
 :only           -> keep only this window open
+:bd             -> zamyka dany buffer 
 :ls             -> show current buffers
-:buffer          -> it can be :b 4 -> it open buffers number 4
+:buffer         -> it can be :b 4 -> it open buffers number 4
 :bnext          -> goes to next buffer
 :bprev          -> goes to prev buffer (previously opened file)
 :sh             -> goes to shell, exit goes back to VIM
@@ -65,6 +67,7 @@ dty             -> delete till 'y', COMMAND
 #               -> bedac na slowie szuka poprzedniego wystapienia 
 :/someWord      -> find a line with that aword, cursor at the start
 ?pattern        -> Search backward for pattern
+CTRL + L        -> clears highlighted words after searching: alternatives  nnoremap <esc> :noh<return><esc>
 
 #REPLACING
 :%/search/replace/gc        -> search and replace -> g all occerences c ask confirmation
@@ -116,7 +119,7 @@ ysiw<em>         -> makes <em>Hello</em> world!
 #nerdtree
 Type :help NERDTreeMappings to read through all of the default keyboard shortcuts. These are the ones I use the most frequently:
 
-ctrl + t        -> open or close the nerd tree
+ctrl + e        -> open or close the nerd tree
 t               -> Open the selected file in a new tab
 i               -> Open the selected file in a horizontal split window
 s               -> Open the selected file in a vertical split window
@@ -150,23 +153,61 @@ https://beyondgrep.com/documentation/
 you have to do apt-get install ack-grep
 
 #VIM-go
-:GoRun % builds the file
-:GoRun builds the whole package
-:GoBuild builds the file, shows the errors
-:cnext, cprev goes to the error
-ctrl + n, ctrl + m  => mapped keys
-\a                  => closes the error window
-\r                  => odala GoRun
-\b                  => buduje projekt GoBuild
-:GoTestFunc         => testuje tylko funkcje pod kursorem
-:GoTest             => odpala wszystkie testy
-:GoTestCompile       => testy musza tez sie skompilowac poprawnie
+:GoRun              => builds the file
+:GoRun % OR ,r      => builds the whole package
+:GoBuild OR ,b      => builds the file, shows the errors
 
+:GoTestFunc         => testuje tylko funkcje pod kursorem
+:GoTest OR ,t           => odpala wszystkie testy
+:GoTestCompile      => testy musza tez sie skompilowac poprawnie
+:GoCoverageToggle OR ,c  => shows the coverage
+:GoImports OR ,i    => automatically adds imports
+:GoDef OR gd        => go to definition
+CTRL + O            => goes back after checking the declaration
+:GoDefPop OR CTRL T => goes back after checking the definition (do no remember other moves)
+:GoDecls            => shows function in file
+:GoDevlsDir         => shows functions in directory
+:GoDoc OR K         => pokazuje dokumentacje funkcji
+
+
+:cnext OR ctrl + n  => go to error next prev
+:cprev OR ctrl + m  => go to error prev
+,a                  => closes the error window
+dif                 => deletes everything in function
+vaf                 => visual mode whole function
+]]                  => jump to next function
+[[                  => jump to previous function
+d]]                 => delete everything to next function
+:A                  => otwiera plik alternatywny (testowy)
+:AV                 => otwiera plik alternatywny - vertykalnie
+:AS                 => otwiera plik alternatywny horyzontalnie
+:AT                 => otwiera plik w nowym tabie
+
+Unused:
+:GoImport s         => adding library, has autocomplition
+:GoImportAs str strings => add strings as str import 
+:GoDrop strings     => deletes the strings import
+:GoDeps             => pokazuje zaleznosci
+:GoFiles            => pokazuje pliki w pakiecie (bez testow)
+
+
+#splitjoin.vim
+A vim plugin that simplifies the transition between multiline and single-line code 
+gS                  => one line structures converts to multiline
+gJ                  => many line structures converts to single line
 
 #ctrlp.vim
 pozwala na wyszukiwanie plików za pomoca ctrl + p -> wiecej na https://www.youtube.com/watch?v=8XGueeQJsrA
 https://github.com/kien/ctrlp.vim -> skroty
 
+#ultisnips
+-it must support python in vim
+errp + tab
+fn -> fmt.Println()
+ff -> fmt.Printf()
+ln -> log.Println()
+lf -> log.Printf()
+Message string .<- json + tab 
 
 #vim-buftabline
 displays vim buffers as tabs
@@ -180,21 +221,29 @@ dodaj ten pasek informacyjny na dole
 https://github.com/morhetz/gruvbox/wiki/Configuration - do zmiany konfiguracji
 https://github.com/morhetz/gruvbox/issues/85
 
-#Vim version problem with vim-go
-https://www.vim.org/git.php
-
 //TODO
 git plugin
+Debuging
+:GoReferrers skrot
+usuniecie swapow - alias
 alias for hide 
 alias for only
 go to previous change 
 intelli sense
 wylaczyc opoznienie klawiszy - linux
+jak wylaczyc podswietlenie od wyszukiwania
+zamykanie buffera vim :bd - moze alias na to?
+czemu zc i ZM nie dziala?
+zmienic przeskakiwanie miedzy oknami na ctrl alt >
+zmapowac procent?
+https://dev.to/jovica/the-vim-trick-which-will-save-your-time-and-nerves-45pg
 
 makegreen -d do opalania testów (chyba w ruby) i pathogen 
 https://realpython.com/vim-and-python-a-match-made-in-heaven/
 https://www.youtube.com/watch?v=knSFZCKMy20
 
+export PATH=$PATH:$HOME/go/bin 
+https://github.com/fatih/vim-go/issues/1807
 
 *********************************************Memorized****************************************************************
 6l               -> forward 6 letters 
@@ -264,3 +313,32 @@ vimcasts.org               -> by zobaczyc jak inni uzywaja vima
 upcase.com/vim 
 https://www.youtube.com/user/nettutsplus/search?query=vim
 
+
+#Vim version problem with vim-go and with python support 
+https://gist.github.com/oPauloChaves/440a8725e3fa52f008ee7e707c9e43ec
+
+but the paramas were changed to :
+
+./configure \
+--enable-multibyte \
+--enable-pythoninterp=dynamic \
+--with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
+--enable-python3interp \
+--with-python3-config-dir=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu \
+--enable-cscope \
+--enable-gui=auto \
+--with-features=huge \
+--with-x \
+--enable-fontset \
+--enable-largefile \
+--disable-netbeans \
+--with-compiledby="opaulochaves" \
+--enable-fail-if-missing
+
+Alternatives approaches (did not work for me)
+https://www.vim.org/git.php (following instruction)
+https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
+https://gist.github.com/marciomazza/bb78a84232a6b44b4d45
+-had to change to vim.gnome and make alias for it
+https://unix.stackexchange.com/questions/217179/python-feature-disabled-vim-nox
+https://vi.stackexchange.com/questions/13151/how-to-safely-switch-from-vim-athena-to-vim-gtk
