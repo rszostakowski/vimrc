@@ -168,6 +168,11 @@ CTRL + O            => goes back after checking the declaration
 :GoDecls            => shows function in file
 :GoDevlsDir         => shows functions in directory
 :GoDoc OR K         => pokazuje dokumentacje funkcji
+:GoReferrers        => pokazuje referencje
+:GoDescribe         => pokazuje API  w  kodach zrodlowych
+:GoImplements       => pokazuje co implementuje
+:GoWhicherrs        => uruchamiane na errorze
+:GoChannelPeers     => pokazuje informacje o channelu
 
 
 :cnext OR ctrl + n  => go to error next prev
@@ -222,16 +227,16 @@ https://github.com/morhetz/gruvbox/wiki/Configuration - do zmiany konfiguracji
 https://github.com/morhetz/gruvbox/issues/85
 
 //TODO
+by sie kursor podswietlal jak miga 
 git plugin
 Debuging
 :GoReferrers skrot
-usuniecie swapow - alias
+:GoDescribe
+
 alias for hide 
 alias for only
 go to previous change 
 intelli sense
-wylaczyc opoznienie klawiszy - linux
-jak wylaczyc podswietlenie od wyszukiwania
 zamykanie buffera vim :bd - moze alias na to?
 czemu zc i ZM nie dziala?
 zmienic przeskakiwanie miedzy oknami na ctrl alt >

@@ -34,6 +34,12 @@ sed s/pattern/replace_string/g file1 > file2
 sed 1,2s/is/are/g testfile           => zamienia is na are w 1,2 liniach
 sed s/is/are/g testfile              => zamienia is na are globally
 
+tr '{}' '()' < inputfile > outputfile=>	Translate braces into parenthesis
+ echo "This   is   for    testing" | tr -s [:space:]  => Squeeze repetition of characters using -s
+ tr -cd [:print:] < file.txt	     => Remove all non-printable character from a file
+ cat cities | tr a-z A-Z             => fram small to Capital 
+
+tee                                  => takes the output from any command, and, while sending it to standard output, it also saves it to a file
 
 awk '{ print $0 }' /etc/passwd	     => Print entire file
 awk -F: '{ print $1 }' /etc/passwd	 => Print first field (column) of every line, separated by a space
@@ -42,6 +48,7 @@ sort -k 3 <filename>	             => Sort the lines by the 3rd field on each lin
 
 grep -v [pattern] <filename>	     => Print all lines that do not match the pattern
 grep -C 3 [pattern] <filename>	     => Print context of lines (specified number of lines above and below the pattern) for matching the pattern. Here, the number of lines is specified as 3.
+ls -l | cut -d" " -f3                => to display the third column delimited by a blank space, at the command prompt type 
 
 paste                                => can be used to combine fields (such as name or phone number) from different files
 split                                => is used to break up (or split) a file into equal-sized segments. For seeing LARGE files

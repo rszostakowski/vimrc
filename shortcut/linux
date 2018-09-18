@@ -17,10 +17,15 @@ ctrl + shift + -        => zmniejszenie czcionki
 
 tail -f atmtrans.txt    => to monitor log files which constanly are appended
 less                    => to view the contents 
- of such a large file, scrolling up and down
+of such a large file, scrolling up and down
 page by page, without the system having to
- place the entire file in memory before 
- starting
+place the entire file in memory before starting
+
+A 32-bit IPv4 address is divided into four 8-bit sections 
+called octets.A 32-bit IPv4 address is divided into four 8-bit sections called octets.
+IP address →            172  .          16  .          31  .         46
+Bit format →     10101100.00010000.00011111.00101110
+
 
 ****Usefull commands****
 setxkbmap -option caps:escape	=> zmienia CAPSLOCK na ESC
