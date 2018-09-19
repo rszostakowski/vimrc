@@ -14,7 +14,10 @@ nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 set autowrite
 set list
 set listchars=tab:>-
-
+"Backspace can delete the line thanks to that
+set backspace=indent,eol,start
+"It should make shift + o much faster
+:set timeout timeoutlen=5000 ttimeoutlen=100
 "Adding pathogen for libs management
 execute pathogen#infect()
 
@@ -103,6 +106,11 @@ let g:go_highlight_generate_tags = 1
 let g:go_auto_sameids = 1
 "change indentation to 4 spaces
 "autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
 "THEME AND COLOR
 "two lines below must be placed because Terminator program do not display the gruvbox theme https://stackoverflow.com/questions/38311626/vim-color-scheme-with-terminator#

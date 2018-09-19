@@ -153,6 +153,7 @@ https://beyondgrep.com/documentation/
 you have to do apt-get install ack-grep
 
 #VIM-go
+:w                  => triggers GoFmt
 :GoRun              => builds the file
 :GoRun % OR ,r      => builds the whole package
 :GoBuild OR ,b      => builds the file, shows the errors
@@ -221,6 +222,10 @@ ctrl + LEFT         => goes to prev tab
 
 #vim-airline  
 dodaj ten pasek informacyjny na dole 
+
+#auitocompleteme 
+you have to add special installation
+https://github.com/Valloric/YouCompleteMe.git
 
 #gruvbox
 https://github.com/morhetz/gruvbox/wiki/Configuration - do zmiany konfiguracji
