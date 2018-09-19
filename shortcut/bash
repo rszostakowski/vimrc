@@ -56,3 +56,7 @@ split american-english dictionary    => powstanie wiele plikow dictionary* (np d
 cat > test1
 teraz mozna pisac 
 CTRL + D escepe from wrting to the file test1
+
+************************USEFULL COMMANDS*************************
+docker stop $(docker ps | awk '{ print $1 }' | grep -v "CONTAINER")     => stops all containers
+

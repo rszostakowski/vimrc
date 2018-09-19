@@ -30,4 +30,3 @@ Bit format →     10101100.00010000.00011111.00101110
 ****Usefull commands****
 setxkbmap -option caps:escape	=> zmienia CAPSLOCK na ESC
 git config credential.helper store => zapamietuje haslo i login git
-docker stop $(docker ps | awk '{ print $1 }' | grep -v "CONTAINER")
