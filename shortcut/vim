@@ -1,4 +1,4 @@
-*********************************************Unmemorized****************************************************************
+/*********************************************Unmemorized****************************************************************
 delay 180 repetition 35/s
 J               -> joins the line below into current one
 0               -> goes to the start of the line, COMMAND 
@@ -14,7 +14,7 @@ shift A         -> goes to the end of the line, INSERT
 Ctrl-R          ->  Redo (reverts UNDO)
 
 #DELETING 
-D  or (d$)      -> delete from the cursor to the end of the line
+D  ojkr (d$)      -> delete from the cursor to the end of the line
 X               -> deletes the previous character (in a direction of the start of the line)
 
 #CHANGE AND REPLACE
@@ -65,7 +65,7 @@ Fy              -> idz do poprzedniej litery 'y'
 dty             -> delete till 'y', COMMAND
 *               -> bedac na slowie szuka nastepnego wystapienia 
 #               -> bedac na slowie szuka poprzedniego wystapienia 
-:/someWord      -> find a line with that aword, cursor at the start
+/someWord      -> find a line with that aword, cursor at the start
 ?pattern        -> Search backward for pattern
 CTRL + L        -> clears highlighted words after searching: alternatives  nnoremap <esc> :noh<return><esc>
 
@@ -232,6 +232,13 @@ https://github.com/morhetz/gruvbox/wiki/Configuration - do zmiany konfiguracji
 https://github.com/morhetz/gruvbox/issues/85
 
 //TODO
+poza terminalem używam gitg, gitk i meld - JANKA 
+:GoRename
+ :GoImplement <nazwa_interfejsu>
+ ja to używam tylko ctrl+g i ctrl+t
+ gd nie dziala tak jak powinno (:GODEF)
+
+
 by sie kursor podswietlal jak miga 
 git plugin
 Debuging
@@ -352,3 +359,9 @@ https://gist.github.com/marciomazza/bb78a84232a6b44b4d45
 -had to change to vim.gnome and make alias for it
 https://unix.stackexchange.com/questions/217179/python-feature-disabled-vim-nox
 https://vi.stackexchange.com/questions/13151/how-to-safely-switch-from-vim-athena-to-vim-gtk
+
+
+
+CMD + W blokowanie w ITERM2
+https://apple.stackexchange.com/questions/44412/disable-command-w-in-the-terminal
+Zamiast "Close Window" trzeba zrobic "Close"
