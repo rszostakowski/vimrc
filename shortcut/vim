@@ -232,6 +232,8 @@ https://github.com/morhetz/gruvbox/wiki/Configuration - do zmiany konfiguracji
 https://github.com/morhetz/gruvbox/issues/85
 
 //TODO
+https://github.com/tpope/vim-fugitive
+
 poza terminalem używam gitg, gitk i meld - JANKA 
 :GoRename
  :GoImplement <nazwa_interfejsu>
