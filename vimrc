@@ -18,6 +18,7 @@ set backspace=indent,eol,start
 :set timeout timeoutlen=5000 ttimeoutlen=100
 
 set hidden
+nnoremap <C-Right> :bnext<CR>
 nnoremap <C-Left> :bprev<CR>
 
 "Key mappings

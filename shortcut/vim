@@ -227,6 +227,11 @@ dodaj ten pasek informacyjny na dole
 you have to add special installation
 https://github.com/Valloric/YouCompleteMe.git
 
+#vundle
+Launch vim and run :PluginInstall
+
+To install from command line: vim +PluginInstall +qall
+
 #gruvbox
 https://github.com/morhetz/gruvbox/wiki/Configuration - do zmiany konfiguracji
 https://github.com/morhetz/gruvbox/issues/85

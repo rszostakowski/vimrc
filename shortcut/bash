@@ -57,8 +57,35 @@ cat > test1
 teraz mozna pisac 
 CTRL + D escepe from wrting to the file test1
 
+Command params:
+$*	All parameters
+$#	Number of arguments
+$0	Script name
+
+Command in command:
+By enclosing the inner command with backticks (`) i.e.  cd `echo /tmp`
+By enclosing the inner command in $( ) cd $(echo /tmp)
+
+ env, set, printenv - list of environment variables.
+
+ Variables created in script must be exported to be global variables (export VAR=value)
+
+[[ -d $NEW_DIR ]] && echo $NEW_DIR already exists => checks if direcotry exists
+
+Check if file exists:
+if [ -f /etc/passwd ]
+then
+    echo "/etc/passwd exists."
+fi
+
+-g file	Checks if the file has sgid set.
+-u file	Checks if the file has suid set. ???
+
 ************************USEFULL COMMANDS*************************
 docker stop $(docker ps | awk '{ print $1 }' | grep -v "CONTAINER")     => stops all containers
+cat file1 || cat file2 || cat file3 => In this case, you proceed until something succeeds and then you stop executing any further steps.
+make ; make install ; make clean    => he following example will all execute, even if the ones preceding them fail:
+
 
 
 
