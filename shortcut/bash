@@ -81,6 +81,13 @@ fi
 -g file	Checks if the file has sgid set.
 -u file	Checks if the file has suid set. ???
 
+Alternatives:
+expr 8 + 8
+echo $(expr 8 + 8)
+echo $((x+1))
+
+myLen1=${#string1}	=> Saves the length of string1 in the variable myLen1
+${string#*.} => To extract all characters in a string after a dot (.)
 ************************USEFULL COMMANDS*************************
 docker stop $(docker ps | awk '{ print $1 }' | grep -v "CONTAINER")     => stops all containers
 cat file1 || cat file2 || cat file3 => In this case, you proceed until something succeeds and then you stop executing any further steps.
