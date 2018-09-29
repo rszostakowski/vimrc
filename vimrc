@@ -80,6 +80,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tomtom/tcomment_vim'
 
+"Java Plugins
+Plugin 'artur-shaik/vim-javacomplete2'
+
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
