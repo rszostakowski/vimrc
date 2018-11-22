@@ -223,9 +223,14 @@ ctrl + LEFT         => goes to prev tab
 #vim-airline  
 dodaj ten pasek informacyjny na dole 
 
-#auitocompleteme 
+#youcompleteme 
 you have to add special installation
 https://github.com/Valloric/YouCompleteMe.git
+
+#net
+#omnisharp-vim 
+how to install: https://chrisseroka.wordpress.com/2016/04/18/vim-for-net-set-up/
+
 
 #vundle
 Launch vim and run :PluginInstall
