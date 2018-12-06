@@ -8,6 +8,13 @@ $               -> goes to the end of the line, COMMAND
 shift I         -> goes to the start of the line, INSERT 
 shift A         -> goes to the end of the line, INSERT 
 ()              -> move to sentence 
+B               -> works like ^
+E               -> works like $
+gV              -> highlight last inserted text !!!!!!!!!!!
+CTRL o          -> idz do poprzedniego miejsca !!!!!!!!!!!!
+
+#MACROS
+http://vim.wikia.com/wiki/Macros
 
 #LAST CHANGES
 '.              -> go to last change 
@@ -32,6 +39,7 @@ ctrl d          -> polowa screenu w dol
 w               -> next word (first letter of the word)
 b               -> prew word (first letter of the word)
 e               -> next end of the word 
+                -> previous end of the word ??
 gm              -> go to the medium of the line 
 
 #COPY AND PASTE
@@ -152,50 +160,6 @@ it makes search for code use in the codebase
 https://beyondgrep.com/documentation/
 you have to do apt-get install ack-grep
 
-#VIM-go
-:w                  => triggers GoFmt
-:GoRun              => builds the file
-:GoRun % OR ,r      => builds the whole package
-:GoBuild OR ,b      => builds the file, shows the errors
-
-:GoTestFunc         => testuje tylko funkcje pod kursorem
-:GoTest OR ,t           => odpala wszystkie testy
-:GoTestCompile      => testy musza tez sie skompilowac poprawnie
-:GoCoverageToggle OR ,c  => shows the coverage
-:GoImports OR ,i    => automatically adds imports
-:GoDef OR gd        => go to definition
-CTRL + O            => goes back after checking the declaration
-:GoDefPop OR CTRL T => goes back after checking the definition (do no remember other moves)
-:GoDecls            => shows function in file
-:GoDevlsDir         => shows functions in directory
-:GoDoc OR K         => pokazuje dokumentacje funkcji
-:GoReferrers        => pokazuje referencje
-:GoDescribe         => pokazuje API  w  kodach zrodlowych
-:GoImplements       => pokazuje co implementuje
-:GoWhicherrs        => uruchamiane na errorze
-:GoChannelPeers     => pokazuje informacje o channelu
-
-
-:cnext OR ctrl + n  => go to error next prev
-:cprev OR ctrl + m  => go to error prev
-,a                  => closes the error window
-dif                 => deletes everything in function
-vaf                 => visual mode whole function
-]]                  => jump to next function
-[[                  => jump to previous function
-d]]                 => delete everything to next function
-:A                  => otwiera plik alternatywny (testowy)
-:AV                 => otwiera plik alternatywny - vertykalnie
-:AS                 => otwiera plik alternatywny horyzontalnie
-:AT                 => otwiera plik w nowym tabie
-
-Unused:
-:GoImport s         => adding library, has autocomplition
-:GoImportAs str strings => add strings as str import 
-:GoDrop strings     => deletes the strings import
-:GoDeps             => pokazuje zaleznosci
-:GoFiles            => pokazuje pliki w pakiecie (bez testow)
-
 
 #splitjoin.vim
 A vim plugin that simplifies the transition between multiline and single-line code 
@@ -227,6 +191,19 @@ dodaj ten pasek informacyjny na dole
 you have to add special installation
 https://github.com/Valloric/YouCompleteMe.git
 
+#Python
+\gd - Go to Definition!
+\gr - Go to Reference!
+\gdc - get documentation
+F9 - uruchamia skrypt-3.5m
+CTRL L -> czysci wyszukanie hlsearch
+F9 - run script
+
+#vim-autopep8 https://github.com/tell-k/vim-autopep8
+:Autopep8
+F8 - run autopep8 for the whole file
+gq - run autopep8 for selected visual block
+
 #vundle
 Launch vim and run :PluginInstall
 
@@ -236,21 +213,12 @@ To install from command line: vim +PluginInstall +qall
 https://github.com/morhetz/gruvbox/wiki/Configuration - do zmiany konfiguracji
 https://github.com/morhetz/gruvbox/issues/85
 
+
+
 //TODO
 https://github.com/tpope/vim-fugitive
 
 poza terminalem używam gitg, gitk i meld - JANKA 
-:GoRename
- :GoImplement <nazwa_interfejsu>
- ja to używam tylko ctrl+g i ctrl+t
- gd nie dziala tak jak powinno (:GODEF)
-
-
-by sie kursor podswietlal jak miga 
-git plugin
-Debuging
-:GoReferrers skrot
-:GoDescribe
 
 alias for hide 
 alias for only
@@ -319,6 +287,64 @@ p               -> paste text below cursor
 vit             -> zaznaczasz wszystko (i) w tagu (htmlowym) 
 vat             -> zaznaczasz wszystko (i) w tagu wraz z tagami (htmlowym) 
 ci}             -> change In Brackets 
+
+
+*****************************#VIM-go************************
+:w                  => triggers GoFmt
+:GoRun              => builds the file
+:GoRun % OR ,r      => builds the whole package
+:GoBuild OR ,b      => builds the file, shows the errors
+
+:GoTestFunc         => testuje tylko funkcje pod kursorem
+:GoTest OR ,t           => odpala wszystkie testy
+:GoTestCompile      => testy musza tez sie skompilowac poprawnie
+:GoCoverageToggle OR ,c  => shows the coverage
+:GoImports OR ,i    => automatically adds imports
+:GoDef OR gd        => go to definition
+CTRL + O            => goes back after checking the declaration
+:GoDefPop OR CTRL T => goes back after checking the definition (do no remember other moves)
+:GoDecls            => shows function in file
+:GoDevlsDir         => shows functions in directory
+:GoDoc OR K         => pokazuje dokumentacje funkcji
+:GoReferrers        => pokazuje referencje
+:GoDescribe         => pokazuje API  w  kodach zrodlowych
+:GoImplements       => pokazuje co implementuje
+:GoWhicherrs        => uruchamiane na errorze
+:GoChannelPeers     => pokazuje informacje o channelu
+
+
+:cnext OR ctrl + n  => go to error next prev
+:cprev OR ctrl + m  => go to error prev
+,a                  => closes the error window
+dif                 => deletes everything in function
+vaf                 => visual mode whole function
+]]                  => jump to next function
+[[                  => jump to previous function
+d]]                 => delete everything to next function
+:A                  => otwiera plik alternatywny (testowy)
+:AV                 => otwiera plik alternatywny - vertykalnie
+:AS                 => otwiera plik alternatywny horyzontalnie
+:AT                 => otwiera plik w nowym tabie
+
+Unused:
+:GoImport s         => adding library, has autocomplition
+:GoImportAs str strings => add strings as str import 
+:GoDrop strings     => deletes the strings import
+:GoDeps             => pokazuje zaleznosci
+:GoFiles            => pokazuje pliki w pakiecie (bez testow)
+
+:GoRename
+ :GoImplement <nazwa_interfejsu>
+ ja to używam tylko ctrl+g i ctrl+t
+ gd nie dziala tak jak powinno (:GODEF)
+
+
+by sie kursor podswietlal jak miga 
+git plugin
+Debuging
+:GoReferrers skrot
+:GoDescribe
+
 
 
 *********************************************OTHERS****************************************************************

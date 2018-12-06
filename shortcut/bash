@@ -80,6 +80,7 @@ fi
 
 -g file	Checks if the file has sgid set.
 -u file	Checks if the file has suid set. ???
+-z not null variable if [ ! -z my_Var]
 
 Alternatives:
 expr 8 + 8
@@ -113,3 +114,4 @@ Or untracked directories (e.g., new or automatically generated directories):
 
 git clean -fd
 
+git config credential.helper store - if you want to save your credentials
