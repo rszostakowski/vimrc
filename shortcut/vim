@@ -13,6 +13,10 @@ E               -> works like $
 gV              -> highlight last inserted text !!!!!!!!!!!
 CTRL o          -> idz do poprzedniego miejsca !!!!!!!!!!!!
 
+
+ctrl i          -> moving forward  to previous cursor positon
+ctrol o         -> moving back to previous cursor positon
+
 #MACROS
 http://vim.wikia.com/wiki/Macros
 
@@ -41,6 +45,12 @@ b               -> prew word (first letter of the word)
 e               -> next end of the word 
                 -> previous end of the word ??
 gm              -> go to the medium of the line 
+
+# RECORDING
+qa (a do z) - zaczyna nagrywanie
+q - konczy nagrywanie
+@a - uruchamia nagrywanie
+@@ repeats the last playback.
 
 #COPY AND PASTE
 P               -> wkleja przed 
@@ -126,6 +136,8 @@ ysiw<em>         -> makes <em>Hello</em> world!
 
 #nerdtree
 Type :help NERDTreeMappings to read through all of the default keyboard shortcuts. These are the ones I use the most frequently:
+:buffers - pokazuje wszystkie otwarte buffery
+:1b - idzie do pierwszego buffera
 
 ctrl + e        -> open or close the nerd tree
 t               -> Open the selected file in a new tab
@@ -202,7 +214,7 @@ F9 - run script
 #vim-autopep8 https://github.com/tell-k/vim-autopep8
 :Autopep8
 F8 - run autopep8 for the whole file
-gq - run autopep8 for selected visual block
+gq - run autopep8 for selected visual blockn
 
 #vundle
 Launch vim and run :PluginInstall
