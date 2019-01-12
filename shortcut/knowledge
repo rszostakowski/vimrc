@@ -4,3 +4,15 @@ STEP 1 - Pick and study a topic
 STEP 2 - Explain the topic to someone, like a child, who is unfamiliar with the topic
 STEP 3 - Identify any gaps in your understanding 
 STEP 4 - Review and Simplify!
+
+C#
+C# 6.0 features
+- property default value - called 'auto property initializer'
+- using (static imports like in java)
+- linq feature inside for loop declaration 
+- deference null
+
+Miał wejśc do 6.0 ale nie wszedł:
+primary constructor - uzycie auto property initialzer w constuktorze 
+
+Roslyn - compiler platform 

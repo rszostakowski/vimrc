@@ -1,9 +1,8 @@
-"Remember to rename vimrc directory to .vim
+"Remember to rename vimrc directory to .vim and create symbolic links
+"sudo rm -r ~/.vimrc
+"sudo ln -s ~/.vim/.vimrc ~/.vimrc
 "A popular option to indicate switching to Insert mode (and back to Normal mode) is toggling the cursorline option that is responsible for whether the current screen line is highlighted.
 autocmd InsertEnter,InsertLeave * set cul!
-
-"Show in which mode we are 
-" set showmode
 
 " Better command-line completion
 set wildmenu
@@ -48,8 +47,7 @@ set incsearch
 set backspace=indent,eol,start
 "It should make shift + o much faster
 set timeout timeoutlen=5000 ttimeoutlen=100
-" Copy to system cliboard
-set clipboard=unnamedplus
+
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
@@ -65,6 +63,7 @@ set hidden
 " Show partial commands in the last line of the screen
 set showcmd
 
+" Switch beetwen tabs(buffers) in the same window
 nnoremap <C-Right> :bnext<CR>
 nnoremap <C-Left> :bprev<CR>
 
@@ -89,6 +88,9 @@ nnoremap E $
 " highlight last inserted text
 nnoremap gV `[v`]
 
+" add newline without entering insert mode
+nmap <A-o> o<Esc>k
+
 "Nerdtree config
 " autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
@@ -102,6 +104,13 @@ map <C-e> :NERDTreeToggle<CR>
 set background=dark
 set t_Co=256
 
+" Copy to system cliboard - this one is disabled since plugin "System Copy"
+set clipboard=unnamedplus
+
+" Change color when in Insert mode
+autocmd InsertEnter * set background=light
+autocmd InsertLeave * set background=dark
+"Adding colorscheme to vim 
 "https://github.com/morhetz/gruvbox/wiki/Configuration
 colorscheme gruvbox
 let g:gruvbox_contrast_dark='hard'
@@ -112,6 +121,22 @@ filetype on
 syntax on 
 "Automatically displays all buffers when there's only one tab open.
 let g:airline#extensions#tabline#enabled = 1
+
+" adding buffers to F5
+:nnoremap <F5> :buffers<CR>:buffer<Space>
+
+" switch beeting windows for example ctrl + alt + leftarrow
+nmap <silent> <C-A-Up> :wincmd k<CR>
+nmap <silent> <C-A-Down> :wincmd j<CR>
+nmap <silent> <C-A-Left> :wincmd h<CR>
+nmap <silent> <C-A-Right> :wincmd l<CR>
+
+" Clears the register
+command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
+
+" turn hybrid line numbers on vertical bar on left
+:set number relativenumber
+:set nu rnu
 
 "##########################################VUNDLE#####################
 set nocompatible              " be iMproved, required
@@ -124,19 +149,23 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim' "plugin for dependency management
 
-Plugin 'mileszs/ack.vim'
-Plugin 'morhetz/gruvbox' 
-Plugin 'ap/vim-buftabline'
-Plugin 'tpope/vim-surround'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'tell-k/vim-autopep8'
-Bundle 'Valloric/YouCompleteMe'
-Plugin 'Yggdroot/indentLine' "adds vertical lines 
+Plugin 'mileszs/ack.vim' "find word in package :ACK word_to_search - zastępuje GREPa
+Plugin 'morhetz/gruvbox' "dark theme 
+Plugin 'ap/vim-buftabline' "managing(switching) buffers -> CTRL <- or  CTRL ->
+Plugin 'tpope/vim-surround' "for managing sourrinding tags 
+Plugin 'kien/ctrlp.vim' " ctrl p  search for files
+Plugin 'scrooloose/nerdtree' "search tree like in IDE
+Plugin 'vim-airline/vim-airline' "pasek na dole
+Plugin 'tomtom/tcomment_vim'    "do zakomentowywania kodu
+Plugin 'tell-k/vim-autopep8'    "autopep8 - it is used to autoformat python code
+Bundle 'Valloric/YouCompleteMe' 
+Plugin 'Yggdroot/indentLine' "adds vertical lines in vim
+Plugin 'vim-scripts/ReplaceWithRegister' "gr for replacing instead of viwp
+Plugin 'christoomey/vim-titlecase' "gt makes a letter uppercase
+Plugin 'tpope/vim-fugitive' "git support in vim
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -164,3 +193,7 @@ let g:autopep8_diff_type='vertical' "makes autopep diff vertical
 " Automatically fix PEP8 errors in the current buffer:
 au FileType python setlocal formatprg=autopep8\ -
 
+
+"########DISABLED##############
+"Show in which mode we are 
+" set showmode

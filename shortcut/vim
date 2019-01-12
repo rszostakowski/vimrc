@@ -1,3 +1,11 @@
+Wishlist:
+pokazywanie co jest obecnie typowane
+jakis tool do find and replace
+
+https://github.com/tpope/vim-repeat - dziala . z pluginami
+https://github.com/christoomey/vim-tmux-navigator - rozważyć tmuxa
+https://github.com/christoomey/vim-sort-motion - sortowanie textu w vimie
+
 /*********************************************Unmemorized****************************************************************
 delay 180 repetition 35/s
 J               -> joins the line below into current one
@@ -13,9 +21,13 @@ E               -> works like $
 gV              -> highlight last inserted text !!!!!!!!!!!
 CTRL o          -> idz do poprzedniego miejsca !!!!!!!!!!!!
 
+A-o             -> adding empty line below without going there 
 
 ctrl i          -> moving forward  to previous cursor positon
 ctrol o         -> moving back to previous cursor positon
+d%              -> deletes method body!! does not work in python 
+cis             -> change in sentence
+cip             -> change in paragraph
 
 #MACROS
 http://vim.wikia.com/wiki/Macros
@@ -52,11 +64,17 @@ q - konczy nagrywanie
 @a - uruchamia nagrywanie
 @@ repeats the last playback.
 
-#COPY AND PASTE
+#COPY AND PASTE - REGISTERS https://medium.com/vim-drops/vim-registers-the-powerful-native-clipboard-19b1c97891bd
 P               -> wkleja przed 
 4p              -> paste sth 4 times
 "0p             -> copy the thing which is under "0 in register
 :registers      -> pokazuje schowek 
+
+"dyy            -> copy line to register under letter b 
+"bp             -> paste the thing under letter b
+"Bdd            -> append to the letter b instead of replacing
+:WipeReg        -> clears the register
+:reg            -> to see the register
 
 # OPENING-CLOSING FILES
 :e nazwapliku   -> otwiera nowy plik np ':e ../innyplik'
@@ -74,6 +92,12 @@ ctrl-w=         -> make all equal size
 :bd             -> zamyka dany buffer 
 :ls             -> show current buffers
 :buffer         -> it can be :b 4 -> it open buffers number 4
+F5 - uruchamia :buffers     -> show buffers
+ctrl w + h,j,k,l            -> switching windows 
+ctrl alt <-,->  -> przeskakuje pomiedzy oknami
+ctrl <-, ->     -> przeskakuje miedzy buforami
+gV              -> podkreśla ostatnio dodany tekst
+
 :bnext          -> goes to next buffer
 :bprev          -> goes to prev buffer (previously opened file)
 :sh             -> goes to shell, exit goes back to VIM
@@ -98,7 +122,9 @@ ma              -> zaznacza punkt
 `a              -> skacze dokladnie do tego punktu 
 mA              -> zaznacza punkt w innym pliku (umozliwia przechodzenie miedzy plikami)
 ''              -> przeskakuje do poprzedniego markera
- 
+kopiowanie i usuwanie z markerami http://vim.wikia.com/wiki/Using_marks 
+
+
 #TABS
 <<              -> insert tabs in normal mode, COMMAND
 >>              -> insert tabs in normal mode, COMMAND
@@ -123,16 +149,32 @@ g<b              -> Uncomment the current region as block
 
 g>c              -> Comment the current line
 g>b              -> Comment the current region as block
+gcap             -> gc at paragraph
+gcas             -> gc at sentence
 
 #vim-surround
 cs"'             -> "Hello world!" to  'Hello world!'
 cs'<q>           -> to <q>Hello world!</q>
 cst"             -> <q>Hello world!</q> to get  "Hello world!"
 ds"              -> To remove the delimiters entirely, press Hello world!
-ysiw]            -> (iw is a text object) -> [Hello] world!
+ysiw]            -> (iw is a text object) -> [Hello] world! -> yank surrounding inside word
 cs]              -> { [ Hello] world! -> { Hello } world!
 yssb or yss      -> Now wrap the entire line in parentheses ({ Hello } world!) 
+yss"             -> wezmie cala linie w ""
 ysiw<em>         -> makes <em>Hello</em> world!
+
+
+#vim-fugitive
+Bring up the output of git status with :Gstatus. 
+Press - to add/reset a file's changes,
+or P to add/reset --patch.
+Use :Gcommit % to commit the current file, editing the commit message inside the currently running Vim.
+
+#vim-titlecase
+gt               -> make letter uppercase
+gti'             -> titlecase inside of single quotes
+gT               -> make titlecase the current line
+gtap             -> make titlecase the current paragraph
 
 #nerdtree
 Type :help NERDTreeMappings to read through all of the default keyboard shortcuts. These are the ones I use the most frequently:
@@ -154,7 +196,7 @@ it makes a tree of files for us to see
 https://www.youtube.com/watch?v=CPu9mDpSYj0
 https://medium.com/usevim/nerd-tree-guide-bb22c803dcd2
 
-#ack.vim
+#ack.vim - wpisuje :ACK i wyszukuje użycia
 ?    a quick summary of these keys, repeat to close
 o    to open (same as Enter)
 O    to open and close the quickfix window
@@ -199,6 +241,16 @@ ctrl + LEFT         => goes to prev tab
 #vim-airline  
 dodaj ten pasek informacyjny na dole 
 
+#ReplaceWithRegister - do replace instead of viwp
+[count]["x]gr{motion}   Replace {motion} text with the contents of register x.
+                        Especially when using the unnamed register, this is
+                        quicker than "_d{motion}P or "_c{motion}<C-R>"
+[count]["x]grr          Replace [count] lines with the contents of register x.
+                        To replace from the cursor position to the end of the
+                        line use ["x]gr$
+{Visual}["x]gr          Replace the selection with the contents of register x.
+
+
 #auitocompleteme 
 you have to add special installation
 https://github.com/Valloric/YouCompleteMe.git
@@ -207,6 +259,9 @@ https://github.com/Valloric/YouCompleteMe.git
 \gd - Go to Definition!
 \gr - Go to Reference!
 \gdc - get documentation
+Preview Window - jak zamknąć :pc!
+
+
 F9 - uruchamia skrypt-3.5m
 CTRL L -> czysci wyszukanie hlsearch
 F9 - run script
@@ -248,6 +303,17 @@ https://www.youtube.com/watch?v=knSFZCKMy20
 
 export PATH=$PATH:$HOME/go/bin 
 https://github.com/fatih/vim-go/issues/1807
+
+
+
+
+
+
+
+
+
+
+
 
 *********************************************Memorized****************************************************************
 6l               -> forward 6 letters 
